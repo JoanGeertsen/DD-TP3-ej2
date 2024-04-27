@@ -1,6 +1,6 @@
 ﻿namespace DD_TP3_ej2
 {
-    partial class Form1
+    partial class FFiguras
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             pCreacio = new Panel();
-            gbFigura = new GroupBox();
-            rbCirculo = new RadioButton();
-            rbCuadrado = new RadioButton();
-            rbTriangulo = new RadioButton();
-            rbRectangulo = new RadioButton();
-            gbCuadrado = new GroupBox();
-            label1 = new Label();
-            textBox1 = new TextBox();
             bAgregar = new Button();
+            gbCuadrado = new GroupBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            gbFigura = new GroupBox();
+            rbRectangulo = new RadioButton();
+            rbTriangulo = new RadioButton();
+            rbCuadrado = new RadioButton();
+            rbCirculo = new RadioButton();
             lbFiguras = new ListBox();
             bArea = new Button();
             bPerimetro = new Button();
             lCantidadCuadrados = new Label();
-            label2 = new Label();
+            l = new Label();
             pCreacio.SuspendLayout();
-            gbFigura.SuspendLayout();
             gbCuadrado.SuspendLayout();
+            gbFigura.SuspendLayout();
             SuspendLayout();
             // 
             // pCreacio
@@ -58,6 +58,42 @@
             pCreacio.Name = "pCreacio";
             pCreacio.Size = new Size(410, 151);
             pCreacio.TabIndex = 0;
+            // 
+            // bAgregar
+            // 
+            bAgregar.Location = new Point(321, 114);
+            bAgregar.Name = "bAgregar";
+            bAgregar.Size = new Size(75, 34);
+            bAgregar.TabIndex = 5;
+            bAgregar.Text = "&Agregar";
+            bAgregar.UseVisualStyleBackColor = true;
+            // 
+            // gbCuadrado
+            // 
+            gbCuadrado.Controls.Add(textBox1);
+            gbCuadrado.Controls.Add(label1);
+            gbCuadrado.Location = new Point(137, 12);
+            gbCuadrado.Name = "gbCuadrado";
+            gbCuadrado.Size = new Size(259, 96);
+            gbCuadrado.TabIndex = 4;
+            gbCuadrado.TabStop = false;
+            gbCuadrado.Text = "Cuadrado";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(76, 43);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(34, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Lado:";
             // 
             // gbFigura
             // 
@@ -72,15 +108,25 @@
             gbFigura.TabStop = false;
             gbFigura.Text = "Figura";
             // 
-            // rbCirculo
+            // rbRectangulo
             // 
-            rbCirculo.AutoSize = true;
-            rbCirculo.Location = new Point(6, 22);
-            rbCirculo.Name = "rbCirculo";
-            rbCirculo.Size = new Size(63, 19);
-            rbCirculo.TabIndex = 0;
-            rbCirculo.Text = "Circulo";
-            rbCirculo.UseVisualStyleBackColor = true;
+            rbRectangulo.AutoSize = true;
+            rbRectangulo.Location = new Point(6, 97);
+            rbRectangulo.Name = "rbRectangulo";
+            rbRectangulo.Size = new Size(85, 19);
+            rbRectangulo.TabIndex = 3;
+            rbRectangulo.Text = "Rectangulo";
+            rbRectangulo.UseVisualStyleBackColor = true;
+            // 
+            // rbTriangulo
+            // 
+            rbTriangulo.AutoSize = true;
+            rbTriangulo.Location = new Point(6, 72);
+            rbTriangulo.Name = "rbTriangulo";
+            rbTriangulo.Size = new Size(74, 19);
+            rbTriangulo.TabIndex = 2;
+            rbTriangulo.Text = "Triangulo";
+            rbTriangulo.UseVisualStyleBackColor = true;
             // 
             // rbCuadrado
             // 
@@ -94,61 +140,15 @@
             rbCuadrado.Text = "Cuadrado";
             rbCuadrado.UseVisualStyleBackColor = true;
             // 
-            // rbTriangulo
+            // rbCirculo
             // 
-            rbTriangulo.AutoSize = true;
-            rbTriangulo.Location = new Point(6, 72);
-            rbTriangulo.Name = "rbTriangulo";
-            rbTriangulo.Size = new Size(74, 19);
-            rbTriangulo.TabIndex = 2;
-            rbTriangulo.Text = "Triangulo";
-            rbTriangulo.UseVisualStyleBackColor = true;
-            // 
-            // rbRectangulo
-            // 
-            rbRectangulo.AutoSize = true;
-            rbRectangulo.Location = new Point(6, 97);
-            rbRectangulo.Name = "rbRectangulo";
-            rbRectangulo.Size = new Size(85, 19);
-            rbRectangulo.TabIndex = 3;
-            rbRectangulo.Text = "Rectangulo";
-            rbRectangulo.UseVisualStyleBackColor = true;
-            // 
-            // gbCuadrado
-            // 
-            gbCuadrado.Controls.Add(textBox1);
-            gbCuadrado.Controls.Add(label1);
-            gbCuadrado.Location = new Point(137, 12);
-            gbCuadrado.Name = "gbCuadrado";
-            gbCuadrado.Size = new Size(259, 96);
-            gbCuadrado.TabIndex = 4;
-            gbCuadrado.TabStop = false;
-            gbCuadrado.Text = "Cuadrado";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(34, 47);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Lado:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(76, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // bAgregar
-            // 
-            bAgregar.Location = new Point(321, 114);
-            bAgregar.Name = "bAgregar";
-            bAgregar.Size = new Size(75, 34);
-            bAgregar.TabIndex = 5;
-            bAgregar.Text = "&Agregar";
-            bAgregar.UseVisualStyleBackColor = true;
+            rbCirculo.AutoSize = true;
+            rbCirculo.Location = new Point(6, 22);
+            rbCirculo.Name = "rbCirculo";
+            rbCirculo.Size = new Size(63, 19);
+            rbCirculo.TabIndex = 0;
+            rbCirculo.Text = "Circulo";
+            rbCirculo.UseVisualStyleBackColor = true;
             // 
             // lbFiguras
             // 
@@ -186,32 +186,33 @@
             lCantidadCuadrados.TabIndex = 8;
             lCantidadCuadrados.Text = "Cantidad de Cuadrados:";
             // 
-            // label2
+            // l
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(148, 218);
-            label2.Name = "label2";
-            label2.Size = new Size(134, 15);
-            label2.TabIndex = 9;
-            label2.Text = "Cantidad de Cuadrados:";
+            l.AutoSize = true;
+            l.Location = new Point(31, 369);
+            l.Name = "l";
+            l.Size = new Size(143, 15);
+            l.TabIndex = 9;
+            l.Text = "Cantidad de Cuadrados: 0";
             // 
-            // Form1
+            // FFiguras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(431, 450);
-            Controls.Add(label2);
+            Controls.Add(l);
             Controls.Add(lCantidadCuadrados);
             Controls.Add(bPerimetro);
             Controls.Add(bArea);
             Controls.Add(lbFiguras);
             Controls.Add(pCreacio);
-            Name = "Form1";
+            Name = "FFiguras";
+            Text = "Figuras";
             pCreacio.ResumeLayout(false);
-            gbFigura.ResumeLayout(false);
-            gbFigura.PerformLayout();
             gbCuadrado.ResumeLayout(false);
             gbCuadrado.PerformLayout();
+            gbFigura.ResumeLayout(false);
+            gbFigura.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,6 +233,6 @@
         private Button bArea;
         private Button bPerimetro;
         private Label lCantidadCuadrados;
-        private Label label2;
+        private Label l;
     }
 }
