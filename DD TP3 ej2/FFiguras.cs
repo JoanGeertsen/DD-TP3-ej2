@@ -8,25 +8,29 @@ namespace DD_TP3_ej2
         {
             InitializeComponent();
         }
+        private void mostrarGroupBox(GroupBox gb)
+        {
+            gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
+            gb.Visible = true;
+        }
 
         private void rbCirculo_CheckedChanged(object sender, EventArgs e)
         {
-            gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
+            mostrarGroupBox(gbCirculo);
         }
 
         private void rbCuadrado_CheckedChanged(object sender, EventArgs e)
         {
-            gbCirculo.Visible = false; gbCuadrado.Visible = true; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
+            mostrarGroupBox(gbCuadrado);                       
         }
-
-        private void rbRectangulo_CheckedChanged(object sender, EventArgs e)
-        {
-            //gbCirculo.Visible = false; gbCuadrado.true = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
-        }
-
         private void rbTriangulo_CheckedChanged(object sender, EventArgs e)
         {
-            // MostrarGroupBox(sender, e);
+            mostrarGroupBox(gbTriangulo);           
         }
+        private void rbRectangulo_CheckedChanged(object sender, EventArgs e)
+        {
+            mostrarGroupBox(gbRectangulo);            
+        }
+
     }
 }
