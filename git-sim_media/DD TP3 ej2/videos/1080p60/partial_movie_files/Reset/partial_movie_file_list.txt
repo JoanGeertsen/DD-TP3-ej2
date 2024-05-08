@@ -1,2 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/joang/source/repos/DD TP3 ej2/git-sim_media/DD TP3 ej2/videos/1080p60/partial_movie_files/Reset/1431007973_3421678860_1885664126.mp4'
