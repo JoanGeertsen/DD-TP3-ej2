@@ -13,9 +13,21 @@ namespace DD_TP3_ej2
         #endregion
 
         #region constructores
+        public Figura()
+        {
+            cantVertices = 0;
+        }
         public Figura(int cantVertices)
         {
             this.cantVertices = (cantVertices > 0) ? cantVertices : 0;
+        }
+        #endregion
+
+        #region Property
+        public int CantVertices
+        {
+            get { return cantVertices; }
+            set { cantVertices = (value > 0) ? value : 0; }
         }
         #endregion
 
@@ -27,6 +39,11 @@ namespace DD_TP3_ej2
         public void area()
         {
             //No tiene sentido...
+        }
+
+        public string mostrar()
+        {
+            return $"Cantidad de Vérties: {cantVertices}";
         }
         #endregion
     }
