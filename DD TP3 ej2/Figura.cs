@@ -43,7 +43,7 @@ namespace DD_TP3_ej2
 
         public string mostrar()
         {
-            return $"Cantidad de Vérties: {cantVertices}";
+            return $"Vérties: {cantVertices}";
         }
         #endregion
     }

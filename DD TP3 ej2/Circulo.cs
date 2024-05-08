@@ -26,5 +26,22 @@ namespace DD_TP3_ej2
             set { radio = (value > 0) ? value : 0; }
         }
         #endregion
+
+        #region Consultas
+        public double area()
+        {
+            return Math.PI * Math.Pow(radio , 2);
+        }
+
+        public double perimetro()
+        {
+            return 2 * Math.PI * radio;
+        }
+
+        public string mostrar()
+        {
+            return $"Radio: {radio}";
+        }
+        #endregion
     }
 }
