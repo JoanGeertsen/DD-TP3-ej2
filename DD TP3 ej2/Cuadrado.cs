@@ -44,6 +44,5 @@ namespace DD_TP3_ej2
             return $"Lado: {lado}";
         }
         #endregion
-
     }
 }
