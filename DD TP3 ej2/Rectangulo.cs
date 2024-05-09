@@ -36,9 +36,19 @@ namespace DD_TP3_ej2
         #endregion
 
         #region consultas
-        public double area()
+        public override double area()
         {
-            return base * altura;
+            return basee * altura;
+        }
+
+        public override double perimetro()
+        {
+            return altura * 2 + basee * 2;
+        }
+
+        public override string mostrar()
+        {
+            return $"Base: {basee} Altura: {altura}";
         }
         #endregion
     }
