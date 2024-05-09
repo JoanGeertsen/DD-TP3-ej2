@@ -6,22 +6,11 @@ using System.Threading.Tasks;
 
 namespace DD_TP3_ej2
 {
-    internal class Figura
+    internal abstract class Figura
     {
         #region Atributos
         private int cantVertices; //Dice real pero no tiene sentido
-        #endregion
-
-        #region constructores
-        public Figura()
-        {
-            cantVertices = 0;
-        }
-        public Figura(int cantVertices)
-        {
-            this.cantVertices = (cantVertices > 0) ? cantVertices : 0;
-        }
-        #endregion
+        #endregion       
 
         #region Property
         public int CantVertices
@@ -32,19 +21,9 @@ namespace DD_TP3_ej2
         #endregion
 
         #region Consutlas
-        public void perimetro()
-        {
-            //No tiene sentido...
-        }
-        public void area()
-        {
-            //No tiene sentido...
-        }
-
-        public string mostrar()
-        {
-            return $"Vérties: {cantVertices}";
-        }
+        public abstract double perimetro();
+        public abstract double area();
+        public abstract string mostrar();    
         #endregion
     }
 }

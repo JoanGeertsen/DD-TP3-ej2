@@ -28,17 +28,17 @@ namespace DD_TP3_ej2
         #endregion
 
         #region Consultas
-        public double area()
+        public override double area()
         {
             return Math.PI * Math.Pow(radio , 2);
         }
 
-        public double perimetro()
+        public override double perimetro()
         {
             return 2 * Math.PI * radio;
         }
 
-        public string mostrar()
+        public override string mostrar()
         {
             return $"Radio: {radio}";
         }
