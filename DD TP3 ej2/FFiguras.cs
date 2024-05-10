@@ -41,16 +41,28 @@ namespace DD_TP3_ej2
 
         private void bArea_Click(object sender, EventArgs e)
         {
-            Figura[] a=aRectangulos;
+            Figura[] a = aRectangulos;
             if (rbCirculo.Checked) a = aCirculos;
             else if (rbCuadrado.Checked) a = aCuadrados;
             else if (rbTriangulo.Checked) a = aTriangulos;
-            else if (rbRectangulo.Checked) a= aRectangulos;
+            else if (rbRectangulo.Checked) a = aRectangulos;
 
-            if(obtenerYValidarIndex(out int i))
-            {
+            if (obtenerYValidarIndex(out int i))            
                 MessageBox.Show($"El área es: {a[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
+        }
+
+        private void bPerimetro_Click(object sender, EventArgs e)
+        {
+            Figura[] a = aRectangulos;
+            if (rbCirculo.Checked) a = aCirculos;
+            else if (rbCuadrado.Checked) a = aCuadrados;
+            else if (rbTriangulo.Checked) a = aTriangulos;
+            else if (rbRectangulo.Checked) a = aRectangulos;
+
+            if (obtenerYValidarIndex(out int i))            
+                MessageBox.Show($"El área es: {a[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void actualizarGruposVisibles(GroupBox gb, Label l)
@@ -197,6 +209,7 @@ namespace DD_TP3_ej2
             if (!char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
-        #endregion      
+        #endregion
+       
     }
 }

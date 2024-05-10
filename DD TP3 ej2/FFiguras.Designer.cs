@@ -348,6 +348,7 @@
             bPerimetro.TabIndex = 7;
             bPerimetro.Text = "&Perímetro";
             bPerimetro.UseVisualStyleBackColor = true;
+            bPerimetro.Click += bPerimetro_Click;
             // 
             // lCantidadCuadrados
             // 
