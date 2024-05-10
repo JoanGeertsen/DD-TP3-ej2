@@ -377,6 +377,7 @@
             bCerrar.TabIndex = 10;
             bCerrar.Text = "&Cerrar";
             bCerrar.UseVisualStyleBackColor = true;
+            bCerrar.Click += bCerrar_Click;
             // 
             // lCantidadCirculos
             // 
