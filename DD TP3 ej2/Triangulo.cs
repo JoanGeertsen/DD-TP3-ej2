@@ -26,12 +26,14 @@ namespace DD_TP3_ej2
         }
         #endregion
 
+        #region Utilidades
         private double calcularAltura()
         {
             double semiperimetro = (lado1 + lado2 + baseTriangulo) / 2;
             double area = Math.Sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - baseTriangulo));
             return Math.Round(baseTriangulo != 0 ? ((2 * area) / baseTriangulo) : 0 , 3);
         }
+        #endregion
 
         #region Property
         public double BaseTriangulo

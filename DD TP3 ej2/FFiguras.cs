@@ -27,6 +27,32 @@ namespace DD_TP3_ej2
         }
 
         #region Funcionalidades
+        private bool obtenerYValidarIndex(out int index)
+        {
+            bool validez = true;
+            index = lbFiguras.SelectedIndex;
+            if (index == -1)
+            {
+                MessageBox.Show("Debe seleccionar una figura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                validez = false;
+            }
+            return validez;
+        }
+
+        private void bArea_Click(object sender, EventArgs e)
+        {
+            Figura[] a=aRectangulos;
+            if (rbCirculo.Checked) a = aCirculos;
+            else if (rbCuadrado.Checked) a = aCuadrados;
+            else if (rbTriangulo.Checked) a = aTriangulos;
+            else if (rbRectangulo.Checked) a= aRectangulos;
+
+            if(obtenerYValidarIndex(out int i))
+            {
+                MessageBox.Show($"El área es: {a[i].area()}cm²", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void actualizarGruposVisibles(GroupBox gb, Label l)
         {
             gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
@@ -72,7 +98,7 @@ namespace DD_TP3_ej2
                 }
             }
             else if (rbTriangulo.Checked)
-            {//Agregar implementacón para construir con base
+            {
                 double lado1 = (double.Parse(tLado1Triangulo.Text) > 0) ? double.Parse(tLado1Triangulo.Text) : 0;
                 double lado2 = (double.Parse(tLado2Triangulo.Text) > 0) ? double.Parse(tLado2Triangulo.Text) : 0;
                 double lado3 = (double.Parse(tLado3Triangulo.Text) > 0) ? double.Parse(tLado3Triangulo.Text) : 0;
@@ -171,7 +197,6 @@ namespace DD_TP3_ej2
             if (!char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
-        #endregion
-
+        #endregion      
     }
 }

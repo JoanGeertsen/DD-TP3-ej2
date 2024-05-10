@@ -30,20 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             pCreacion = new Panel();
-            bAgregar = new Button();
-            gbFigura = new GroupBox();
-            rbRectangulo = new RadioButton();
-            rbTriangulo = new RadioButton();
-            rbCuadrado = new RadioButton();
-            rbCirculo = new RadioButton();
-            gbCirculo = new GroupBox();
-            tRadioCirculo = new TextBox();
-            label2 = new Label();
             gbRectangulo = new GroupBox();
             tLado2 = new TextBox();
             label7 = new Label();
             tLado1 = new TextBox();
             label6 = new Label();
+            bAgregar = new Button();
             gbTriangulo = new GroupBox();
             tLado3Triangulo = new TextBox();
             label5 = new Label();
@@ -51,9 +43,17 @@
             label4 = new Label();
             tLado1Triangulo = new TextBox();
             label3 = new Label();
+            gbFigura = new GroupBox();
+            rbRectangulo = new RadioButton();
+            rbTriangulo = new RadioButton();
+            rbCuadrado = new RadioButton();
+            rbCirculo = new RadioButton();
+            gbCirculo = new GroupBox();
+            tRadioCirculo = new TextBox();
             gbCuadrado = new GroupBox();
             tLadoCuadrado = new TextBox();
             label1 = new Label();
+            label2 = new Label();
             lbFiguras = new ListBox();
             bArea = new Button();
             bPerimetro = new Button();
@@ -65,10 +65,10 @@
             lCantidadRectangulos = new Label();
             errorProvider = new ErrorProvider(components);
             pCreacion.SuspendLayout();
-            gbFigura.SuspendLayout();
-            gbCirculo.SuspendLayout();
             gbRectangulo.SuspendLayout();
             gbTriangulo.SuspendLayout();
+            gbFigura.SuspendLayout();
+            gbCirculo.SuspendLayout();
             gbCuadrado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
@@ -86,6 +86,51 @@
             pCreacion.Size = new Size(410, 151);
             pCreacion.TabIndex = 0;
             // 
+            // gbRectangulo
+            // 
+            gbRectangulo.Controls.Add(tLado2);
+            gbRectangulo.Controls.Add(label7);
+            gbRectangulo.Controls.Add(tLado1);
+            gbRectangulo.Controls.Add(label6);
+            gbRectangulo.Location = new Point(183, 12);
+            gbRectangulo.Name = "gbRectangulo";
+            gbRectangulo.Size = new Size(214, 96);
+            gbRectangulo.TabIndex = 6;
+            gbRectangulo.TabStop = false;
+            gbRectangulo.Text = "Rectangulo";
+            // 
+            // tLado2
+            // 
+            tLado2.Location = new Point(82, 55);
+            tLado2.Name = "tLado2";
+            tLado2.Size = new Size(100, 23);
+            tLado2.TabIndex = 3;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(40, 59);
+            label7.Name = "label7";
+            label7.Size = new Size(42, 15);
+            label7.TabIndex = 2;
+            label7.Text = "Lado2:";
+            // 
+            // tLado1
+            // 
+            tLado1.Location = new Point(82, 26);
+            tLado1.Name = "tLado1";
+            tLado1.Size = new Size(100, 23);
+            tLado1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(40, 30);
+            label6.Name = "label6";
+            label6.Size = new Size(42, 15);
+            label6.TabIndex = 0;
+            label6.Text = "Lado1:";
+            // 
             // bAgregar
             // 
             bAgregar.Location = new Point(321, 114);
@@ -95,6 +140,70 @@
             bAgregar.Text = "&Agregar";
             bAgregar.UseVisualStyleBackColor = true;
             bAgregar.Click += bAgregar_Click;
+            // 
+            // gbTriangulo
+            // 
+            gbTriangulo.Controls.Add(tLado3Triangulo);
+            gbTriangulo.Controls.Add(label5);
+            gbTriangulo.Controls.Add(tLado2Triangulo);
+            gbTriangulo.Controls.Add(label4);
+            gbTriangulo.Controls.Add(tLado1Triangulo);
+            gbTriangulo.Controls.Add(label3);
+            gbTriangulo.Location = new Point(182, 12);
+            gbTriangulo.Name = "gbTriangulo";
+            gbTriangulo.Size = new Size(214, 96);
+            gbTriangulo.TabIndex = 11;
+            gbTriangulo.TabStop = false;
+            gbTriangulo.Text = "Triangulo";
+            gbTriangulo.Visible = false;
+            // 
+            // tLado3Triangulo
+            // 
+            tLado3Triangulo.Location = new Point(76, 68);
+            tLado3Triangulo.Name = "tLado3Triangulo";
+            tLado3Triangulo.Size = new Size(100, 23);
+            tLado3Triangulo.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(34, 70);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Lado3:";
+            // 
+            // tLado2Triangulo
+            // 
+            tLado2Triangulo.Location = new Point(76, 43);
+            tLado2Triangulo.Name = "tLado2Triangulo";
+            tLado2Triangulo.Size = new Size(100, 23);
+            tLado2Triangulo.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(34, 46);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 15);
+            label4.TabIndex = 2;
+            label4.Text = "Lado2:";
+            // 
+            // tLado1Triangulo
+            // 
+            tLado1Triangulo.Location = new Point(76, 17);
+            tLado1Triangulo.Name = "tLado1Triangulo";
+            tLado1Triangulo.Size = new Size(100, 23);
+            tLado1Triangulo.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(34, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Lado1:";
             // 
             // gbFigura
             // 
@@ -175,124 +284,6 @@
             tRadioCirculo.Size = new Size(100, 23);
             tRadioCirculo.TabIndex = 1;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Radio:";
-            // 
-            // gbRectangulo
-            // 
-            gbRectangulo.Controls.Add(tLado2);
-            gbRectangulo.Controls.Add(label7);
-            gbRectangulo.Controls.Add(tLado1);
-            gbRectangulo.Controls.Add(label6);
-            gbRectangulo.Location = new Point(183, 12);
-            gbRectangulo.Name = "gbRectangulo";
-            gbRectangulo.Size = new Size(214, 96);
-            gbRectangulo.TabIndex = 6;
-            gbRectangulo.TabStop = false;
-            gbRectangulo.Text = "Rectangulo";
-            // 
-            // tLado2
-            // 
-            tLado2.Location = new Point(82, 55);
-            tLado2.Name = "tLado2";
-            tLado2.Size = new Size(100, 23);
-            tLado2.TabIndex = 3;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(40, 59);
-            label7.Name = "label7";
-            label7.Size = new Size(42, 15);
-            label7.TabIndex = 2;
-            label7.Text = "Lado2:";
-            // 
-            // tLado1
-            // 
-            tLado1.Location = new Point(82, 26);
-            tLado1.Name = "tLado1";
-            tLado1.Size = new Size(100, 23);
-            tLado1.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(40, 30);
-            label6.Name = "label6";
-            label6.Size = new Size(42, 15);
-            label6.TabIndex = 0;
-            label6.Text = "Lado1:";
-            // 
-            // gbTriangulo
-            // 
-            gbTriangulo.Controls.Add(tLado3Triangulo);
-            gbTriangulo.Controls.Add(label5);
-            gbTriangulo.Controls.Add(tLado2Triangulo);
-            gbTriangulo.Controls.Add(label4);
-            gbTriangulo.Controls.Add(tLado1Triangulo);
-            gbTriangulo.Controls.Add(label3);
-            gbTriangulo.Location = new Point(182, 12);
-            gbTriangulo.Name = "gbTriangulo";
-            gbTriangulo.Size = new Size(214, 96);
-            gbTriangulo.TabIndex = 11;
-            gbTriangulo.TabStop = false;
-            gbTriangulo.Text = "Triangulo";
-            gbTriangulo.Visible = false;
-            // 
-            // tLado3Triangulo
-            // 
-            tLado3Triangulo.Location = new Point(76, 68);
-            tLado3Triangulo.Name = "tLado3Triangulo";
-            tLado3Triangulo.Size = new Size(100, 23);
-            tLado3Triangulo.TabIndex = 5;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(34, 70);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Lado3:";
-            // 
-            // tLado2Triangulo
-            // 
-            tLado2Triangulo.Location = new Point(76, 43);
-            tLado2Triangulo.Name = "tLado2Triangulo";
-            tLado2Triangulo.Size = new Size(100, 23);
-            tLado2Triangulo.TabIndex = 3;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(34, 46);
-            label4.Name = "label4";
-            label4.Size = new Size(42, 15);
-            label4.TabIndex = 2;
-            label4.Text = "Lado2:";
-            // 
-            // tLado1Triangulo
-            // 
-            tLado1Triangulo.Location = new Point(76, 17);
-            tLado1Triangulo.Name = "tLado1Triangulo";
-            tLado1Triangulo.Size = new Size(100, 23);
-            tLado1Triangulo.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(34, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Lado1:";
-            // 
             // gbCuadrado
             // 
             gbCuadrado.Controls.Add(tLadoCuadrado);
@@ -321,6 +312,15 @@
             label1.TabIndex = 0;
             label1.Text = "Lado:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 47);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Radio:";
+            // 
             // lbFiguras
             // 
             lbFiguras.FormattingEnabled = true;
@@ -338,6 +338,7 @@
             bArea.TabIndex = 6;
             bArea.Text = "&Area";
             bArea.UseVisualStyleBackColor = true;
+            bArea.Click += bArea_Click;
             // 
             // bPerimetro
             // 
@@ -427,14 +428,14 @@
             Name = "FFiguras";
             Text = "Figuras";
             pCreacion.ResumeLayout(false);
-            gbFigura.ResumeLayout(false);
-            gbFigura.PerformLayout();
-            gbCirculo.ResumeLayout(false);
-            gbCirculo.PerformLayout();
             gbRectangulo.ResumeLayout(false);
             gbRectangulo.PerformLayout();
             gbTriangulo.ResumeLayout(false);
             gbTriangulo.PerformLayout();
+            gbFigura.ResumeLayout(false);
+            gbFigura.PerformLayout();
+            gbCirculo.ResumeLayout(false);
+            gbCirculo.PerformLayout();
             gbCuadrado.ResumeLayout(false);
             gbCuadrado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
