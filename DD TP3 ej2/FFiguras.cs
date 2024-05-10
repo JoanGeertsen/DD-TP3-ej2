@@ -139,6 +139,11 @@ namespace DD_TP3_ej2
             }
             lCantidadFiguras.Text = $"Cantidad de Figuras: {cantCirculos + cantCuadrados + cantTriangulos + cantRectangulos}";
         }
+
+        private void bCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         #endregion
 
         #region RadioButtons 
@@ -209,11 +214,6 @@ namespace DD_TP3_ej2
             if (!char.IsNumber(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
-        #endregion
-
-        private void bCerrar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        #endregion        
     }
 }
