@@ -27,7 +27,7 @@ namespace DD_TP3_ej2
         }
 
         #region Funcionalidades
-        private void actualizarElementosVisibles(GroupBox gb, Label l)
+        private void actualizarGruposVisibles(GroupBox gb, Label l)
         {
             gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
             gb.Visible = true;
@@ -36,22 +36,99 @@ namespace DD_TP3_ej2
             errorProvider.Clear();
         }
 
+        private void actualizarListBox(Figura[] a, int cant)
+        {
+            lbFiguras.Items.Clear();
+            for (int i = 0; i < cant; i++)
+                lbFiguras.Items.Add(a[i].mostrar());
+        }
+
+        private void bAgregar_Click(object sender, EventArgs e)
+        {
+            if (rbCirculo.Checked)
+            {
+                if (!(double.Parse(tRadioCirculo.Text) > 0))
+                {
+                    MessageBox.Show("El radio ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tRadioCirculo.Focus();
+                }
+                else
+                {
+                    aCirculos[cantCirculos++] = new Circulo(double.Parse(tRadioCirculo.Text));
+                    actualizarListBox(aCirculos, cantCirculos); lCantidadCirculos.Text = $"Cantidad de Cuadrados: {cantCirculos}";
+                }
+            }
+            else if (rbCuadrado.Checked)
+            {
+                if (!(double.Parse(tLadoCuadrado.Text) > 0))
+                {
+                    MessageBox.Show("El lado ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tLadoCuadrado.Focus();
+                }
+                else
+                {
+                    aCuadrados[cantCuadrados++] = new Cuadrado(double.Parse(tLadoCuadrado.Text));
+                    actualizarListBox(aCuadrados, cantCuadrados); lCantidadCuadrados.Text = $"Cantidad de Cuadrados: {cantCuadrados}";
+                }
+            }
+            else if (rbTriangulo.Checked)
+            {//Agregar implementacón para construir con base
+                double lado1 = (double.Parse(tLado1Triangulo.Text) > 0) ? double.Parse(tLado1Triangulo.Text) : 0;
+                double lado2 = (double.Parse(tLado2Triangulo.Text) > 0) ? double.Parse(tLado2Triangulo.Text) : 0;
+                double lado3 = (double.Parse(tLado3Triangulo.Text) > 0) ? double.Parse(tLado3Triangulo.Text) : 0;
+
+                if (!Triangulo.trianguloValido(lado1, lado2, lado3))
+                {
+                    MessageBox.Show("El triangulo ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    aTriangulos[cantTriangulos++] = new Triangulo(lado1, lado2, lado3);
+                    actualizarListBox(aTriangulos, cantTriangulos); lCantidadTriangulos.Text = $"Cantidad de Triangulos: {cantTriangulos}";
+                }
+            }
+            else if (rbRectangulo.Checked)
+            {
+                if (!(double.Parse(tLado1.Text) > 0) || !(double.Parse(tLado2.Text) > 0))
+                {
+                    MessageBox.Show("El rectangulo ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    aRectangulos[cantRectangulos++] = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
+                    actualizarListBox(aRectangulos, cantRectangulos); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {cantRectangulos}";
+                }
+            }
+            lCantidadFiguras.Text = $"Cantidad de Figuras: {cantCirculos + cantCuadrados + cantTriangulos + cantRectangulos}";
+        }
+        #endregion
+
+        #region RadioButtons 
+        //Todo esto se puede agrupar en 1 solo evento, como en el keyPress y el Leave...
         private void rbCirculo_CheckedChanged(object sender, EventArgs e)
         {
-            actualizarElementosVisibles(gbCirculo, lCantidadCirculos);
+            lbFiguras.Items.Clear();
+            actualizarGruposVisibles(gbCirculo, lCantidadCirculos);
+            actualizarListBox(aCirculos, cantCirculos);
         }
 
         private void rbCuadrado_CheckedChanged(object sender, EventArgs e)
         {
-            actualizarElementosVisibles(gbCuadrado, lCantidadCuadrados);
+            lbFiguras.Items.Clear();
+            actualizarGruposVisibles(gbCuadrado, lCantidadCuadrados);
+            actualizarListBox(aCuadrados, cantCuadrados);
         }
         private void rbTriangulo_CheckedChanged(object sender, EventArgs e)
         {
-            actualizarElementosVisibles(gbTriangulo, lCantidadTriangulos);
+            lbFiguras.Items.Clear();
+            actualizarGruposVisibles(gbTriangulo, lCantidadTriangulos);
+            actualizarListBox(aTriangulos, cantTriangulos);
         }
         private void rbRectangulo_CheckedChanged(object sender, EventArgs e)
         {
-            actualizarElementosVisibles(gbRectangulo, lCantidadRectangulos);
+            lbFiguras.Items.Clear();
+            actualizarGruposVisibles(gbRectangulo, lCantidadRectangulos);
+            actualizarListBox(aRectangulos, cantRectangulos);
         }
         #endregion
 
@@ -70,10 +147,10 @@ namespace DD_TP3_ej2
         private void TextBox_Leave(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox.Text.Length<=0 || int.Parse(textBox.Text) <= 0)           
-                errorProvider.SetError(textBox, "Valor invalido");        
-            else        
-                errorProvider.SetError(textBox, "");         
+            if (textBox.Text.Length <= 0 || int.Parse(textBox.Text) <= 0)
+                errorProvider.SetError(textBox, "Valor invalido");
+            else
+                errorProvider.SetError(textBox, "");
         }
 
         #endregion
@@ -95,5 +172,6 @@ namespace DD_TP3_ej2
                 e.Handled = true;
         }
         #endregion
+
     }
 }
