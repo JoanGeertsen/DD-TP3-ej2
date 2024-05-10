@@ -85,7 +85,7 @@ namespace DD_TP3_ej2
         {
             if (rbCirculo.Checked)
             {
-                if (!(double.Parse(tRadioCirculo.Text) > 0))
+                if (tRadioCirculo.Text == "")
                 {
                     MessageBox.Show("El radio ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tRadioCirculo.Focus();
@@ -98,7 +98,7 @@ namespace DD_TP3_ej2
             }
             else if (rbCuadrado.Checked)
             {
-                if (!(double.Parse(tLadoCuadrado.Text) > 0))
+                if (tLadoCuadrado.Text == "")
                 {
                     MessageBox.Show("El lado ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tLadoCuadrado.Focus();
@@ -111,9 +111,9 @@ namespace DD_TP3_ej2
             }
             else if (rbTriangulo.Checked)
             {
-                double lado1 = (double.Parse(tLado1Triangulo.Text) > 0) ? double.Parse(tLado1Triangulo.Text) : 0;
-                double lado2 = (double.Parse(tLado2Triangulo.Text) > 0) ? double.Parse(tLado2Triangulo.Text) : 0;
-                double lado3 = (double.Parse(tLado3Triangulo.Text) > 0) ? double.Parse(tLado3Triangulo.Text) : 0;
+                double lado1 = (tLado1Triangulo.Text != "") ? double.Parse(tLado1Triangulo.Text) : 0;
+                double lado2 = (tLado2Triangulo.Text != "") ? double.Parse(tLado2Triangulo.Text) : 0;
+                double lado3 = (tLado3Triangulo.Text != "") ? double.Parse(tLado3Triangulo.Text) : 0;
 
                 if (!Triangulo.trianguloValido(lado1, lado2, lado3))
                 {
@@ -127,7 +127,7 @@ namespace DD_TP3_ej2
             }
             else if (rbRectangulo.Checked)
             {
-                if (!(double.Parse(tLado1.Text) > 0) || !(double.Parse(tLado2.Text) > 0))
+                if (tLado1.Text == "" || tLado2.Text == "")
                 {
                     MessageBox.Show("El rectangulo ingresado es INVALIDO", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -136,7 +136,7 @@ namespace DD_TP3_ej2
                     aRectangulos[cantRectangulos++] = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
                     actualizarListBox(aRectangulos, cantRectangulos); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {cantRectangulos}";
                 }
-            }
+            }           
             lCantidadFiguras.Text = $"Cantidad de Figuras: {cantCirculos + cantCuadrados + cantTriangulos + cantRectangulos}";
         }
 
