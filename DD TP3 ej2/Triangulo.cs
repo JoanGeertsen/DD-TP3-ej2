@@ -22,9 +22,16 @@ namespace DD_TP3_ej2
             this.baseTriangulo= esValido ? baseTriangulo : 0;
             this.lado1= esValido ? lado1 : 0;
             this.lado2= esValido ? lado2 : 0;
-            altura= esValido ? ((2 * area()) / baseTriangulo) : 0; //Revisar si la llamada a area() dentro del constructor no genera conflictos //
+            altura = calcularAltura();
         }
         #endregion
+
+        private double calcularAltura()
+        {
+            double semiperimetro = (lado1 + lado2 + baseTriangulo) / 2;
+            double area = Math.Sqrt(semiperimetro * (semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - baseTriangulo));
+            return Math.Round(baseTriangulo != 0 ? ((2 * area) / baseTriangulo) : 0 , 3);
+        }
 
         #region Property
         public double BaseTriangulo
