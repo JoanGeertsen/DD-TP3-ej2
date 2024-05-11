@@ -114,6 +114,7 @@ namespace DD_TP3_ej2
                 {
                     aCirculos[cantCirculos++] = new Circulo(double.Parse(tRadioCirculo.Text));
                     actualizarListBox(aCirculos, cantCirculos); lCantidadCirculos.Text = $"Cantidad de Cuadrados: {cantCirculos}";
+                    tRadioCirculo.Text = "";
                 }
             }
             else if (rbCuadrado.Checked)
@@ -127,6 +128,7 @@ namespace DD_TP3_ej2
                 {
                     aCuadrados[cantCuadrados++] = new Cuadrado(double.Parse(tLadoCuadrado.Text));
                     actualizarListBox(aCuadrados, cantCuadrados); lCantidadCuadrados.Text = $"Cantidad de Cuadrados: {cantCuadrados}";
+                    tLadoCuadrado.Text = "";
                 }
             }
             else if (rbTriangulo.Checked)
@@ -143,6 +145,7 @@ namespace DD_TP3_ej2
                 {
                     aTriangulos[cantTriangulos++] = new Triangulo(lado1, lado2, lado3);
                     actualizarListBox(aTriangulos, cantTriangulos); lCantidadTriangulos.Text = $"Cantidad de Triangulos: {cantTriangulos}";
+                    tLado1Triangulo.Text = ""; tLado2Triangulo.Text = ""; tLado3Triangulo.Text = "";
                 }
             }
             else if (rbRectangulo.Checked)
@@ -155,6 +158,7 @@ namespace DD_TP3_ej2
                 {
                     aRectangulos[cantRectangulos++] = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
                     actualizarListBox(aRectangulos, cantRectangulos); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {cantRectangulos}";
+                    tLado1.Text = ""; tLado2.Text = "";
                 }
             }
             lCantidadFiguras.Text = $"Cantidad de Figuras: {cantCirculos + cantCuadrados + cantTriangulos + cantRectangulos}";
