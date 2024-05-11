@@ -76,9 +76,7 @@
             // pCreacion
             // 
             pCreacion.BackColor = Color.PaleGreen;
-            pCreacion.Controls.Add(gbRectangulo);
             pCreacion.Controls.Add(bAgregar);
-            pCreacion.Controls.Add(gbTriangulo);
             pCreacion.Controls.Add(gbFigura);
             pCreacion.Controls.Add(gbCirculo);
             pCreacion.Location = new Point(12, 12);
@@ -92,7 +90,7 @@
             gbRectangulo.Controls.Add(label7);
             gbRectangulo.Controls.Add(tLado1);
             gbRectangulo.Controls.Add(label6);
-            gbRectangulo.Location = new Point(183, 12);
+            gbRectangulo.Location = new Point(579, 53);
             gbRectangulo.Name = "gbRectangulo";
             gbRectangulo.Size = new Size(214, 96);
             gbRectangulo.TabIndex = 6;
@@ -149,7 +147,7 @@
             gbTriangulo.Controls.Add(label4);
             gbTriangulo.Controls.Add(tLado1Triangulo);
             gbTriangulo.Controls.Add(label3);
-            gbTriangulo.Location = new Point(182, 12);
+            gbTriangulo.Location = new Point(568, 223);
             gbTriangulo.Name = "gbTriangulo";
             gbTriangulo.Size = new Size(214, 96);
             gbTriangulo.TabIndex = 11;
@@ -267,7 +265,6 @@
             // gbCirculo
             // 
             gbCirculo.Controls.Add(tRadioCirculo);
-            gbCirculo.Controls.Add(gbCuadrado);
             gbCirculo.Controls.Add(label2);
             gbCirculo.Location = new Point(183, 12);
             gbCirculo.Name = "gbCirculo";
@@ -288,7 +285,7 @@
             // 
             gbCuadrado.Controls.Add(tLadoCuadrado);
             gbCuadrado.Controls.Add(label1);
-            gbCuadrado.Location = new Point(0, 0);
+            gbCuadrado.Location = new Point(877, 137);
             gbCuadrado.Name = "gbCuadrado";
             gbCuadrado.Size = new Size(214, 96);
             gbCuadrado.TabIndex = 4;
@@ -416,7 +413,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 394);
+            ClientSize = new Size(1166, 394);
+            Controls.Add(gbRectangulo);
+            Controls.Add(gbCuadrado);
+            Controls.Add(gbTriangulo);
             Controls.Add(lCantidadRectangulos);
             Controls.Add(lCantidadTriangulos);
             Controls.Add(lCantidadCirculos);

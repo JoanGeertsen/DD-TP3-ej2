@@ -6,23 +6,22 @@ namespace DD_TP3_ej2
     public partial class FFiguras : Form
     {
         #region Atributos
-        private Circulo[] aCirculos;
-        private Rectangulo[] aRectangulos;
-        private Cuadrado[] aCuadrados;
-        private Triangulo[] aTriangulos;
+        private Circulo[] aCirculos; private int maxCirculos = 50;
+        private Rectangulo[] aRectangulos; private int maxRectangulos = 50;
+        private Cuadrado[] aCuadrados; private int maxCuadrados = 50;
+        private Triangulo[] aTriangulos; private int maxTriangulos = 50;
         private int cantCirculos;
         private int cantRectangulos;
         private int cantCuadrados;
         private int cantTriangulos;
-        private int max = 50;
         #endregion
         public FFiguras()
         {
             InitializeComponent();
-            aCirculos = new Circulo[max]; cantCirculos = 0;
-            aRectangulos = new Rectangulo[max]; cantRectangulos = 0;
-            aCuadrados = new Cuadrado[max]; cantCuadrados = 0;
-            aTriangulos = new Triangulo[max]; cantTriangulos = 0;
+            aCirculos = new Circulo[maxCirculos]; cantCirculos = 0;
+            aRectangulos = new Rectangulo[maxRectangulos]; cantRectangulos = 0;
+            aCuadrados = new Cuadrado[maxCuadrados]; cantCuadrados = 0;
+            aTriangulos = new Triangulo[maxTriangulos]; cantTriangulos = 0;
             asignarKeyPress(); asignarValidaciones(); //Tal vez mover esto a un Load o algo similar
         }
 
@@ -81,8 +80,29 @@ namespace DD_TP3_ej2
                 lbFiguras.Items.Add(a[i].mostrar());
         }
 
+        private void redimensionarArreglo()
+        {
+            Figura[] aActual = aCirculos; int cant = cantCirculos;
+            Figura[] aNuevo = new Figura[1];
+
+            if (rbCirculo.Checked) { maxCirculos = maxCirculos * 2; aNuevo = new Circulo[maxCirculos]; }
+            else if (rbCuadrado.Checked) { aActual = aCuadrados; cant = cantCuadrados; maxCuadrados = maxCuadrados * 2; aNuevo = new Cuadrado[maxCuadrados]; }
+            else if (rbTriangulo.Checked) { aActual = aTriangulos; cant = cantTriangulos; maxTriangulos = maxTriangulos * 2; aNuevo = new Triangulo[maxTriangulos]; }
+            else if (rbRectangulo.Checked) { aActual = aRectangulos; cant = cantRectangulos; maxRectangulos = maxRectangulos * 2; aNuevo = new Rectangulo[maxRectangulos]; }
+
+            for (int i = 0; i < cant; i++)
+                aNuevo[i] = aActual[i];
+
+            if (rbCirculo.Checked) aCirculos = (Circulo[])aNuevo;
+            else if (rbCuadrado.Checked) aCuadrados = (Cuadrado[])aNuevo;
+            else if (rbTriangulo.Checked) aTriangulos = (Triangulo[])aNuevo;
+            else if (rbRectangulo.Checked) aRectangulos = (Rectangulo[])aNuevo;
+        }
+
         private void bAgregar_Click(object sender, EventArgs e)
         {
+            if (cantCirculos >= maxCirculos || cantCuadrados >= maxCuadrados || cantTriangulos >= maxTriangulos || cantRectangulos >= maxRectangulos)
+                redimensionarArreglo();
             if (rbCirculo.Checked)
             {
                 if (tRadioCirculo.Text == "")
@@ -136,7 +156,7 @@ namespace DD_TP3_ej2
                     aRectangulos[cantRectangulos++] = new Rectangulo(double.Parse(tLado1.Text), double.Parse(tLado2.Text));
                     actualizarListBox(aRectangulos, cantRectangulos); lCantidadRectangulos.Text = $"Cantidad de Rectangulos: {cantRectangulos}";
                 }
-            }           
+            }
             lCantidadFiguras.Text = $"Cantidad de Figuras: {cantCirculos + cantCuadrados + cantTriangulos + cantRectangulos}";
         }
 
