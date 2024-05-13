@@ -60,13 +60,13 @@ namespace DD_TP3_ej2
             else if (rbRectangulo.Checked) a = aRectangulos;
 
             if (obtenerYValidarIndex(out int i))
-                MessageBox.Show($"El área es: {a[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El perímetro es: {a[i].perimetro()}cm", "Resultado:", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void actualizarGruposVisibles(GroupBox gb, Label l)
         {
-            gbCirculo.Visible = true; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
+            gbCirculo.Visible = false; gbCuadrado.Visible = false; gbTriangulo.Visible = false; gbRectangulo.Visible = false;
             gb.Visible = true;
             lCantidadCirculos.Visible = false; lCantidadCuadrados.Visible = false; lCantidadTriangulos.Visible = false; lCantidadRectangulos.Visible = false;
             l.Visible = true;
