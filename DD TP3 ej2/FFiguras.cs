@@ -34,6 +34,7 @@ namespace DD_TP3_ej2
             {
                 MessageBox.Show("Debe seleccionar una figura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 validez = false;
+                lbFiguras.Focus();
             }
             return validez;
         }
@@ -199,7 +200,7 @@ namespace DD_TP3_ej2
         }
         #endregion
 
-        #region validación de capos
+        #region validación de campos
 
         private void asignarValidaciones()
         {
